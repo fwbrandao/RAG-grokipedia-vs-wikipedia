@@ -1,0 +1,15 @@
+.env
+data/chroma/
+data/comparison_results.json
+reference/data/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+.DS_Store
+.streamlit/secrets.toml
+
+# Keep the raw article cache committed so runs are reproducible.
+# Delete the next line if you'd rather not vendor the corpus.
+!data/raw/
