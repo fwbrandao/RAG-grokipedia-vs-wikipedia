@@ -233,7 +233,7 @@ Not required to *learn* RAG, but part of the project plan:
 
 1. Clean `RAG-compare.ipynb` with markdown between cells (repo-ready).  
 2. Streamlit `app.py` for portfolio / Projects dashboard.  
-3. Drafts in `content/` for an X article + LinkedIn post using real divergence findings.
+3. Draft an X article and a LinkedIn post using real divergence findings.
 
 ---
 

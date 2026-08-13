@@ -10,6 +10,10 @@ venv/
 .DS_Store
 .streamlit/secrets.toml
 
+# Local-only — planning and social drafts stay on this machine
+tasks/
+content/
+
 # Keep the raw article cache committed so runs are reproducible.
 # Delete the next line if you'd rather not vendor the corpus.
 !data/raw/
