@@ -1,12 +1,25 @@
 from __future__ import annotations
 
 import html
+import os
 from pathlib import Path
 
 import streamlit as st
 
 from rag.config import SOURCES, Settings
 from rag.pipeline import RagFaceOff
+
+
+def _apply_streamlit_secrets() -> None:
+    """Copy Streamlit secrets into os.environ so rag/ can stay framework-free."""
+    try:
+        secrets = st.secrets
+    except Exception:
+        return
+    for key in ("GROQ_API_KEY", "OPENAI_API_KEY"):
+        value = secrets.get(key)
+        if value and not os.environ.get(key):
+            os.environ[key] = str(value).strip().strip('"').strip("'")
 
 ROOT = Path(__file__).resolve().parent
 CSS = (ROOT / "assets" / "app.css").read_text(encoding="utf-8")
@@ -31,6 +44,7 @@ EXAMPLES = [
 
 @st.cache_resource(show_spinner=False)
 def load_engine() -> RagFaceOff:
+    _apply_streamlit_secrets()
     engine = RagFaceOff(Settings(provider="groq"))
     engine.ensure_indexes(use_cache=True)
     return engine
@@ -92,6 +106,8 @@ st.markdown(
 """,
     unsafe_allow_html=True,
 )
+
+_apply_streamlit_secrets()
 
 with st.spinner("Warming indexes (cached articles + local MiniLM)…"):
     try:

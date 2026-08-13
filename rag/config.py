@@ -5,14 +5,15 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
 
+ROOT = Path(__file__).resolve().parent.parent
+
 try:
     from dotenv import load_dotenv
 
+    load_dotenv(ROOT / ".env")
     load_dotenv()
 except ImportError:
     pass
-
-ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 RAW_DIR = DATA_DIR / "raw"
 CHROMA_DIR = DATA_DIR / "chroma"
@@ -89,11 +90,13 @@ class Settings:
             self.chunk_overlap = 60
 
     def require_keys(self) -> None:
-        if self.key_env and not os.environ.get(self.key_env):
+        if self.key_env and not os.environ.get(self.key_env, "").strip():
             raise RuntimeError(
-                f"{self.key_env} is missing. Copy .env.example to .env and add your key."
+                f"{self.key_env} is missing. Locally: copy .env.example to .env. "
+                "On Streamlit Cloud: App settings → Secrets → "
+                'GROQ_API_KEY = "gsk_..."'
             )
-        if self.embedding_backend == "openai" and not os.environ.get("OPENAI_API_KEY"):
+        if self.embedding_backend == "openai" and not os.environ.get("OPENAI_API_KEY", "").strip():
             raise RuntimeError("OPENAI_API_KEY is missing.")
 
     def ensure_dirs(self) -> None:
