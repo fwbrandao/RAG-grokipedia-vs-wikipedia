@@ -24,6 +24,16 @@ topics ──► ingest (Grokipedia API + MediaWiki API)
 - **Live UI** [`app.py`](app.py) — cinematic split-screen (Grokipedia cyan / Wikipedia magenta).
 - Shared pipeline in [`rag/`](rag/).
 
+## Architecture
+
+Two rails. One generator. The corpus is the only variable.
+
+![Two rails, one generator](assets/diagrams/02-dual-corpus.png)
+
+![Implementation flow — build time then query time](assets/diagrams/01-implementation-flow.png)
+
+More diagrams (sequence + fair A/B contract) and post stills live in [`assets/diagrams/`](assets/diagrams/) and [`assets/`](assets/).
+
 ## Quick start (free)
 
 ```bash
@@ -63,7 +73,7 @@ GROQ_API_KEY = "gsk_..."
 
 5. Deploy. The public URL will look like:
 
-`https://rag-grokipedia-vs-wikipedia.streamlit.app`
+`https://rag-grokipedia-vs-wikipedia-ejglykwi6qnbvunielbn3e.streamlit.app`
 
 Never put the key in the notebook, README, or git.
 

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img">
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0818"/>
+      <stop offset="55%" stop-color="#0d0b21"/>
+      <stop offset="100%" stop-color="#14081c"/>
+    </linearGradient>
+    <radialGradient id="glowC" cx="16%" cy="18%" r="42%">
+      <stop offset="0%" stop-color="#00f5f5" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#00f5f5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowM" cx="86%" cy="16%" r="40%">
+      <stop offset="0%" stop-color="#ff51fa" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#ff51fa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowV" cx="50%" cy="90%" r="48%">
+      <stop offset="0%" stop-color="#a68cff" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#a68cff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00f5f5"/>
+      <stop offset="50%" stop-color="#a68cff"/>
+      <stop offset="100%" stop-color="#ff51fa"/>
+    </linearGradient>
+    <linearGradient id="rail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00f5f5" stop-opacity="0.18"/>
+      <stop offset="50%" stop-color="#a68cff" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ff51fa" stop-opacity="0.18"/>
+    </linearGradient>
+    <linearGradient id="gStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.06"/>
+    </linearGradient>
+    <linearGradient id="spine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a68cff" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#a68cff" stop-opacity="0.75"/>
+      <stop offset="80%" stop-color="#a68cff" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#a68cff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect width="1920" height="1080" fill="url(#glowC)"/>
+  <rect width="1920" height="1080" fill="url(#glowM)"/>
+  <rect width="1920" height="1080" fill="url(#glowV)"/>
+
+
+  <g font-family="Avenir Next, Segoe UI, Helvetica Neue, sans-serif">
+    <text x="80" y="78" fill="#00f5f5" font-size="13" letter-spacing="6" font-weight="600">RAG FACE-OFF</text>
+    <text x="80" y="128" fill="url(#ink)" font-size="42" font-weight="700">Implementation flow</text>
+    <text x="80" y="168" fill="#8b86a8" font-size="18">Two phases. One generator. The corpus is the only variable.</text>
+
+    <text x="80" y="240" fill="#aca8c5" font-size="12" letter-spacing="4" font-weight="600">01  BUILD TIME  &#183;  RUN ONCE</text>
+    <rect x="80" y="258" width="1760" height="4" rx="2" fill="url(#rail)"/>
+
+    <rect x="80" y="290" width="380" height="200" rx="18" fill="#191631" fill-opacity="0.82" stroke="url(#gStroke)"/>
+<rect x="80" y="290" width="6" height="200" rx="3" fill="#00f5f5"/>
+<text x="108" y="326" fill="#00f5f5" font-size="12" letter-spacing="3" font-weight="600">STEP 2</text>
+<text x="108" y="368" fill="#e7e2ff" font-size="28" font-weight="700">Ingest</text>
+<text x="108" y="402" fill="#8b86a8" font-size="15">Grokipedia API + MediaWiki</text>
+<text x="108" y="428" fill="#8b86a8" font-size="15">429 backoff + title override</text>
+<text x="108" y="464" fill="#c9c4e4" font-size="14">cache &#8594; data/raw/*.json</text>
+    <rect x="500" y="290" width="380" height="200" rx="18" fill="#191631" fill-opacity="0.82" stroke="url(#gStroke)"/>
+<rect x="500" y="290" width="6" height="200" rx="3" fill="#5ce8ff"/>
+<text x="528" y="326" fill="#5ce8ff" font-size="12" letter-spacing="3" font-weight="600">STEP 3</text>
+<text x="528" y="368" fill="#e7e2ff" font-size="28" font-weight="700">Chunk</text>
+<text x="528" y="402" fill="#8b86a8" font-size="15">Paragraph-aware splitter</text>
+<text x="528" y="428" fill="#8b86a8" font-size="15">MiniLM ceiling is 256 tokens</text>
+<text x="528" y="464" fill="#c9c4e4" font-size="14">220 tokens &#183; 40 overlap</text>
+    <rect x="920" y="290" width="380" height="200" rx="18" fill="#191631" fill-opacity="0.82" stroke="url(#gStroke)"/>
+<rect x="920" y="290" width="6" height="200" rx="3" fill="#a68cff"/>
+<text x="948" y="326" fill="#a68cff" font-size="12" letter-spacing="3" font-weight="600">STEP 4</text>
+<text x="948" y="368" fill="#e7e2ff" font-size="28" font-weight="700">Embed</text>
+<text x="948" y="402" fill="#8b86a8" font-size="15">Local MiniLM via Chroma</text>
+<text x="948" y="428" fill="#8b86a8" font-size="15">Same encoder for both KBs</text>
+<text x="948" y="464" fill="#c9c4e4" font-size="14">384-d vectors</text>
+    <rect x="1340" y="290" width="500" height="200" rx="18" fill="#191631" fill-opacity="0.82" stroke="url(#gStroke)"/>
+<rect x="1340" y="290" width="6" height="200" rx="3" fill="#ff51fa"/>
+<text x="1368" y="326" fill="#ff51fa" font-size="12" letter-spacing="3" font-weight="600">STEP 5</text>
+<text x="1368" y="368" fill="#e7e2ff" font-size="28" font-weight="700">Index  &#215;  2</text>
+<text x="1368" y="402" fill="#8b86a8" font-size="15">Two isolated Chroma collections</text>
+<text x="1368" y="464" fill="#c9c4e4" font-size="14">kb_grokipedia   /   kb_wikipedia</text>
+
+    <g fill="none" stroke="#a68cff" stroke-width="1.5" stroke-opacity="0.55">
+      <path d="M460 390 H494"/><path d="M880 390 H914"/><path d="M1300 390 H1334"/>
+    </g>
+
+    <text x="80" y="560" fill="#aca8c5" font-size="12" letter-spacing="4" font-weight="600">02  QUERY TIME  &#183;  EVERY QUESTION</text>
+    <rect x="80" y="578" width="1760" height="4" rx="2" fill="url(#rail)"/>
+
+    <rect x="80" y="610" width="300" height="210" rx="18" fill="#191631" fill-opacity="0.82" stroke="url(#gStroke)"/>
+<rect x="80" y="610" width="6" height="210" rx="3" fill="#8b86a8"/>
+<text x="108" y="646" fill="#8b86a8" font-size="12" letter-spacing="3" font-weight="600">INPUT</text>
+<text x="108" y="688" fill="#e7e2ff" font-size="28" font-weight="700">Question</text>
+<text x="108" y="722" fill="#8b86a8" font-size="15">Embedded once.</text>
+<text x="108" y="748" fill="#8b86a8" font-size="15">Vector reused on both</text>
+<text x="108" y="774" fill="#8b86a8" font-size="15">collections.</text>
+    <rect x="430" y="610" width="300" height="210" rx="18" fill="#191631" fill-opacity="0.82" stroke="url(#gStroke)"/>
+<rect x="430" y="610" width="6" height="210" rx="3" fill="#00f5f5"/>
+<text x="458" y="646" fill="#00f5f5" font-size="12" letter-spacing="3" font-weight="600">STEP 6</text>
+<text x="458" y="688" fill="#e7e2ff" font-size="28" font-weight="700">Retrieve</text>
+<text x="458" y="722" fill="#8b86a8" font-size="15">top_k = 5 per corpus</text>
+<text x="458" y="748" fill="#8b86a8" font-size="15">Grokipedia hits</text>
+<text x="458" y="774" fill="#8b86a8" font-size="15">Wikipedia hits</text>
+    <rect x="780" y="610" width="340" height="210" rx="18" fill="#191631" fill-opacity="0.82" stroke="url(#gStroke)"/>
+<rect x="780" y="610" width="6" height="210" rx="3" fill="#a68cff"/>
+<text x="808" y="646" fill="#a68cff" font-size="12" letter-spacing="3" font-weight="600">STEP 6</text>
+<text x="808" y="688" fill="#e7e2ff" font-size="28" font-weight="700">Ground + generate</text>
+<text x="808" y="722" fill="#8b86a8" font-size="15">Same system prompt</text>
+<text x="808" y="748" fill="#8b86a8" font-size="15">Same temperature 0.1</text>
+<text x="808" y="794" fill="#c9c4e4" font-size="14">Groq  llama-3.3-70b</text>
+    <rect x="1170" y="610" width="310" height="210" rx="18" fill="#191631" fill-opacity="0.82" stroke="url(#gStroke)"/>
+<rect x="1170" y="610" width="6" height="210" rx="3" fill="#ff51fa"/>
+<text x="1198" y="646" fill="#ff51fa" font-size="12" letter-spacing="3" font-weight="600">STEP 7</text>
+<text x="1198" y="688" fill="#e7e2ff" font-size="28" font-weight="700">Compare</text>
+<text x="1198" y="722" fill="#8b86a8" font-size="15">Answer cosine similarity</text>
+<text x="1198" y="748" fill="#8b86a8" font-size="15">Topic-set overlap</text>
+<text x="1198" y="794" fill="#c9c4e4" font-size="14">Divergence is a signal</text>
+
+    <rect x="1530" y="610" width="310" height="210" rx="18" fill="#12102a" stroke="#a68cff" stroke-opacity="0.45"/>
+    <text x="1554" y="650" fill="#a68cff" font-size="12" letter-spacing="3" font-weight="600">LOCKED</text>
+    <text x="1554" y="690" fill="#e7e2ff" font-size="20" font-weight="700">Fair A/B</text>
+    <text x="1554" y="726" fill="#8b86a8" font-size="14">model &#183; prompt &#183; temp</text>
+    <text x="1554" y="750" fill="#8b86a8" font-size="14">top_k &#183; query vector</text>
+    <text x="1554" y="786" fill="#00f5f5" font-size="14">only the corpus moves</text>
+
+    <g fill="none" stroke="#a68cff" stroke-width="1.5" stroke-opacity="0.55">
+      <path d="M380 715 H424"/><path d="M730 715 H774"/><path d="M1120 715 H1164"/><path d="M1480 715 H1524"/>
+    </g>
+
+    <text x="80" y="880" fill="#6d6888" font-size="13">Notebook steps map 1:1 onto rag/  &#183;  Streamlit HUD is the same pipeline</text>
+    <text x="80" y="1008" fill="#4e4a66" font-size="12">github.com/fwbrandao/RAG-grokipedia-vs-wikipedia</text>
+  </g>
+
+</svg>
