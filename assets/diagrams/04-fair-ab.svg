@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img">
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0818"/>
+      <stop offset="55%" stop-color="#0d0b21"/>
+      <stop offset="100%" stop-color="#14081c"/>
+    </linearGradient>
+    <radialGradient id="glowC" cx="16%" cy="18%" r="42%">
+      <stop offset="0%" stop-color="#00f5f5" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#00f5f5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowM" cx="86%" cy="16%" r="40%">
+      <stop offset="0%" stop-color="#ff51fa" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#ff51fa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowV" cx="50%" cy="90%" r="48%">
+      <stop offset="0%" stop-color="#a68cff" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#a68cff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00f5f5"/>
+      <stop offset="50%" stop-color="#a68cff"/>
+      <stop offset="100%" stop-color="#ff51fa"/>
+    </linearGradient>
+    <linearGradient id="rail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00f5f5" stop-opacity="0.18"/>
+      <stop offset="50%" stop-color="#a68cff" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ff51fa" stop-opacity="0.18"/>
+    </linearGradient>
+    <linearGradient id="gStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.06"/>
+    </linearGradient>
+    <linearGradient id="spine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a68cff" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#a68cff" stop-opacity="0.75"/>
+      <stop offset="80%" stop-color="#a68cff" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#a68cff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect width="1920" height="1080" fill="url(#glowC)"/>
+  <rect width="1920" height="1080" fill="url(#glowM)"/>
+  <rect width="1920" height="1080" fill="url(#glowV)"/>
+
+
+  <g font-family="Avenir Next, Segoe UI, Helvetica Neue, sans-serif">
+    <text x="80" y="78" fill="#a68cff" font-size="13" letter-spacing="6" font-weight="600">EXPERIMENTAL DESIGN</text>
+    <text x="80" y="128" fill="url(#ink)" font-size="42" font-weight="700">Fair A/B contract</text>
+    <text x="80" y="168" fill="#8b86a8" font-size="18">If it is not the corpus, it is locked. That is the whole experiment.</text>
+
+    <rect x="80" y="220" width="860" height="720" rx="22" fill="#191631" fill-opacity="0.74" stroke="url(#gStroke)"/>
+    <text x="120" y="280" fill="#a68cff" font-size="13" letter-spacing="4" font-weight="700">LOCKED  &#183;  CONTROL</text>
+    <text x="120" y="328" fill="#e7e2ff" font-size="32" font-weight="700">Held constant</text>
+    <g fill="#c9c4e4" font-size="20">
+      <circle cx="140" cy="400" r="6" fill="#a68cff"/><text x="168" y="408">Generator &#183; Groq llama-3.3-70b-versatile</text>
+      <circle cx="140" cy="460" r="6" fill="#a68cff"/><text x="168" y="468">System prompt &#183; cite [n], no invention</text>
+      <circle cx="140" cy="520" r="6" fill="#a68cff"/><text x="168" y="528">Temperature &#183; 0.1</text>
+      <circle cx="140" cy="580" r="6" fill="#a68cff"/><text x="168" y="588">top_k &#183; 5 passages / corpus</text>
+      <circle cx="140" cy="640" r="6" fill="#a68cff"/><text x="168" y="648">Query vector &#183; embed once, reuse</text>
+      <circle cx="140" cy="700" r="6" fill="#a68cff"/><text x="168" y="708">Chunk budget &#183; 220 tokens / 40 overlap</text>
+      <circle cx="140" cy="760" r="6" fill="#a68cff"/><text x="168" y="768">Encoder &#183; local MiniLM, 384-d</text>
+    </g>
+    <text x="120" y="880" fill="#6d6888" font-size="15">These are not "settings." They are the control group.</text>
+
+    <rect x="980" y="220" width="860" height="720" rx="22" fill="#191631" fill-opacity="0.74" stroke="url(#gStroke)"/>
+    <text x="1020" y="280" fill="#ff51fa" font-size="13" letter-spacing="4" font-weight="700">FREE  &#183;  TREATMENT</text>
+    <text x="1020" y="328" fill="#e7e2ff" font-size="32" font-weight="700">Allowed to move</text>
+
+    <rect x="1020" y="380" width="780" height="150" rx="16" fill="#102226" stroke="#00f5f5" stroke-opacity="0.4"/>
+    <text x="1050" y="430" fill="#00f5f5" font-size="14" letter-spacing="3" font-weight="700">CORPUS A</text>
+    <text x="1050" y="472" fill="#e7e2ff" font-size="24" font-weight="700">Grokipedia</text>
+    <text x="1050" y="504" fill="#7aa8ad" font-size="16">unofficial client &#183; cached JSON</text>
+
+    <rect x="1020" y="550" width="780" height="150" rx="16" fill="#2a1224" stroke="#ff51fa" stroke-opacity="0.4"/>
+    <text x="1050" y="600" fill="#ff51fa" font-size="14" letter-spacing="3" font-weight="700">CORPUS B</text>
+    <text x="1050" y="642" fill="#e7e2ff" font-size="24" font-weight="700">Wikipedia</text>
+    <text x="1050" y="674" fill="#b07aab" font-size="16">MediaWiki API &#183; 429 backoff</text>
+
+    <text x="1020" y="760" fill="#c9c4e4" font-size="20">Observed, not judged</text>
+    <text x="1020" y="800" fill="#8b86a8" font-size="16">answer cosine &#183; topic overlap &#183; retrieval sim</text>
+    <text x="1020" y="836" fill="#8b86a8" font-size="16">Divergence is coverage and framing &#8212; not a verdict.</text>
+    <text x="1020" y="880" fill="#6d6888" font-size="15">If mean_retrieval_sim is low, you measured a miss, not bias.</text>
+  </g>
+
+</svg>

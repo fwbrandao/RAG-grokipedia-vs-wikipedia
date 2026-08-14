@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img">
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0818"/>
+      <stop offset="55%" stop-color="#0d0b21"/>
+      <stop offset="100%" stop-color="#14081c"/>
+    </linearGradient>
+    <radialGradient id="glowC" cx="16%" cy="18%" r="42%">
+      <stop offset="0%" stop-color="#00f5f5" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#00f5f5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowM" cx="86%" cy="16%" r="40%">
+      <stop offset="0%" stop-color="#ff51fa" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#ff51fa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowV" cx="50%" cy="90%" r="48%">
+      <stop offset="0%" stop-color="#a68cff" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#a68cff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00f5f5"/>
+      <stop offset="50%" stop-color="#a68cff"/>
+      <stop offset="100%" stop-color="#ff51fa"/>
+    </linearGradient>
+    <linearGradient id="rail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00f5f5" stop-opacity="0.18"/>
+      <stop offset="50%" stop-color="#a68cff" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ff51fa" stop-opacity="0.18"/>
+    </linearGradient>
+    <linearGradient id="gStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.06"/>
+    </linearGradient>
+    <linearGradient id="spine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a68cff" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#a68cff" stop-opacity="0.75"/>
+      <stop offset="80%" stop-color="#a68cff" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#a68cff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect width="1920" height="1080" fill="url(#glowC)"/>
+  <rect width="1920" height="1080" fill="url(#glowM)"/>
+  <rect width="1920" height="1080" fill="url(#glowV)"/>
+
+
+  <g font-family="Avenir Next, Segoe UI, Helvetica Neue, sans-serif">
+    <text x="960" y="72" text-anchor="middle" fill="#8b86a8" font-size="13" letter-spacing="6" font-weight="600">ARCHITECTURE</text>
+    <text x="960" y="122" text-anchor="middle" fill="url(#ink)" font-size="40" font-weight="700">Two rails. One generator.</text>
+    <text x="960" y="162" text-anchor="middle" fill="#8b86a8" font-size="17">Identical retrieve &#8594; ground &#8594; generate. Isolated corpora.</text>
+
+    <rect x="956" y="200" width="8" height="720" rx="4" fill="url(#spine)"/>
+
+    <rect x="710" y="200" width="500" height="86" rx="16" fill="#191631" fill-opacity="0.88" stroke="#a68cff" stroke-opacity="0.45"/>
+    <text x="960" y="236" text-anchor="middle" fill="#a68cff" font-size="11" letter-spacing="3" font-weight="600">SHARED  &#183;  QUERY VECTOR</text>
+    <text x="960" y="266" text-anchor="middle" fill="#e7e2ff" font-size="20" font-weight="700">MiniLM embed(question)  &#8594;  384-d</text>
+
+    <text x="360" y="230" text-anchor="middle" fill="#00f5f5" font-size="13" letter-spacing="5" font-weight="700">GROKIPEDIA</text>
+    <text x="1560" y="230" text-anchor="middle" fill="#ff51fa" font-size="13" letter-spacing="5" font-weight="700">WIKIPEDIA</text>
+
+    <rect x="80" y="320" width="560" height="120" rx="16" fill="#12242a" fill-opacity="0.88" stroke="#00f5f5" stroke-opacity="0.35"/>
+    <text x="108" y="360" fill="#00f5f5" font-size="12" letter-spacing="2">CORPUS</text>
+    <text x="108" y="396" fill="#e7e2ff" font-size="22" font-weight="700">grokipedia-api  &#183;  unofficial</text>
+    <text x="108" y="422" fill="#7aa8ad" font-size="14">6 topics cached in data/raw/</text>
+
+    <rect x="80" y="460" width="560" height="120" rx="16" fill="#12242a" fill-opacity="0.88" stroke="#00f5f5" stroke-opacity="0.35"/>
+    <text x="108" y="500" fill="#00f5f5" font-size="12" letter-spacing="2">INDEX</text>
+    <text x="108" y="536" fill="#e7e2ff" font-size="22" font-weight="700">Chroma  kb_grokipedia</text>
+    <text x="108" y="562" fill="#7aa8ad" font-size="14">cosine over MiniLM space</text>
+
+    <rect x="80" y="600" width="560" height="120" rx="16" fill="#12242a" fill-opacity="0.88" stroke="#00f5f5" stroke-opacity="0.35"/>
+    <text x="108" y="640" fill="#00f5f5" font-size="12" letter-spacing="2">RETRIEVE</text>
+    <text x="108" y="676" fill="#e7e2ff" font-size="22" font-weight="700">top_k = 5 passages</text>
+    <text x="108" y="702" fill="#7aa8ad" font-size="14">similarity = 1 &#8722; distance</text>
+
+    <rect x="80" y="740" width="560" height="130" rx="16" fill="#0e2a2c" stroke="#00f5f5" stroke-opacity="0.55"/>
+    <text x="108" y="782" fill="#00f5f5" font-size="12" letter-spacing="2">ANSWER A</text>
+    <text x="108" y="820" fill="#e7e2ff" font-size="22" font-weight="700">Grounded + [n] citations</text>
+    <text x="108" y="848" fill="#7aa8ad" font-size="14">Framing follows this corpus only</text>
+
+    <rect x="1280" y="320" width="560" height="120" rx="16" fill="#2a1224" fill-opacity="0.88" stroke="#ff51fa" stroke-opacity="0.35"/>
+    <text x="1308" y="360" fill="#ff51fa" font-size="12" letter-spacing="2">CORPUS</text>
+    <text x="1308" y="396" fill="#e7e2ff" font-size="22" font-weight="700">MediaWiki API  &#183;  official</text>
+    <text x="1308" y="422" fill="#b07aab" font-size="14">title override for COVID origins</text>
+
+    <rect x="1280" y="460" width="560" height="120" rx="16" fill="#2a1224" fill-opacity="0.88" stroke="#ff51fa" stroke-opacity="0.35"/>
+    <text x="1308" y="500" fill="#ff51fa" font-size="12" letter-spacing="2">INDEX</text>
+    <text x="1308" y="536" fill="#e7e2ff" font-size="22" font-weight="700">Chroma  kb_wikipedia</text>
+    <text x="1308" y="562" fill="#b07aab" font-size="14">same embedding space, other docs</text>
+
+    <rect x="1280" y="600" width="560" height="120" rx="16" fill="#2a1224" fill-opacity="0.88" stroke="#ff51fa" stroke-opacity="0.35"/>
+    <text x="1308" y="640" fill="#ff51fa" font-size="12" letter-spacing="2">RETRIEVE</text>
+    <text x="1308" y="676" fill="#e7e2ff" font-size="22" font-weight="700">top_k = 5 passages</text>
+    <text x="1308" y="702" fill="#b07aab" font-size="14">same query vector as left rail</text>
+
+    <rect x="1280" y="740" width="560" height="130" rx="16" fill="#2c0e24" stroke="#ff51fa" stroke-opacity="0.55"/>
+    <text x="1308" y="782" fill="#ff51fa" font-size="12" letter-spacing="2">ANSWER B</text>
+    <text x="1308" y="820" fill="#e7e2ff" font-size="22" font-weight="700">Grounded + [n] citations</text>
+    <text x="1308" y="848" fill="#b07aab" font-size="14">Framing follows this corpus only</text>
+
+    <rect x="710" y="430" width="500" height="200" rx="18" fill="#191631" fill-opacity="0.94" stroke="#a68cff" stroke-opacity="0.5"/>
+    <text x="960" y="470" text-anchor="middle" fill="#a68cff" font-size="11" letter-spacing="3" font-weight="600">LOCKED INVARIANT</text>
+    <text x="960" y="512" text-anchor="middle" fill="#e7e2ff" font-size="24" font-weight="700">Groq  llama-3.3-70b</text>
+    <text x="960" y="548" text-anchor="middle" fill="#8b86a8" font-size="15">same system prompt &#183; temp 0.1 &#183; top_k 5</text>
+    <text x="960" y="578" text-anchor="middle" fill="#8b86a8" font-size="15">cite [n] &#183; refuse to invent &#183; surface disagreement</text>
+    <text x="960" y="606" text-anchor="middle" fill="#c9c4e4" font-size="14">called twice &#8212; once per rail</text>
+
+    <rect x="710" y="900" width="500" height="88" rx="16" fill="#191631" fill-opacity="0.92" stroke="url(#gStroke)"/>
+    <text x="960" y="936" text-anchor="middle" fill="#e7e2ff" font-size="18" font-weight="700">compare()  &#183;  answer cosine  &#183;  topic overlap</text>
+    <text x="960" y="964" text-anchor="middle" fill="#8b86a8" font-size="13">Low similarity is not "wrong." Check retrieval scores first.</text>
+
+    <path d="M360 870 C360 910, 360 920, 710 944" fill="none" stroke="#00f5f5" stroke-width="1.6" stroke-opacity="0.45"/>
+    <path d="M1560 870 C1560 910, 1560 920, 1210 944" fill="none" stroke="#ff51fa" stroke-width="1.6" stroke-opacity="0.45"/>
+  </g>
+
+</svg>
