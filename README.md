@@ -84,7 +84,7 @@ OpenAI-compatible chat API.
 
 | `provider` | Generation | Embeddings | Cost | Needs |
 |---|---|---|---|---|
-| `groq` *(default)* | `llama-3.3-70b-versatile` | MiniLM, local | Free | API key, no card |
+| `groq` *(default)* | `openai/gpt-oss-120b` | MiniLM, local | Free | API key, no card |
 | `ollama` | `llama3.1:8b` | MiniLM, local | Free | [Ollama](https://ollama.com) running locally |
 | `openai` | `gpt-4o-mini` | `text-embedding-3-small` | ~$0.05 total | `OPENAI_API_KEY` |
 

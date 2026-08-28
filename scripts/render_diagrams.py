@@ -309,7 +309,7 @@ def fair() -> str:
     <text x="120" y="280" fill="#a68cff" font-size="13" letter-spacing="4" font-weight="700">LOCKED  &#183;  CONTROL</text>
     <text x="120" y="328" fill="#e7e2ff" font-size="32" font-weight="700">Held constant</text>
     <g fill="#c9c4e4" font-size="20">
-      <circle cx="140" cy="400" r="6" fill="#a68cff"/><text x="168" y="408">Generator &#183; Groq llama-3.3-70b-versatile</text>
+      <circle cx="140" cy="400" r="6" fill="#a68cff"/><text x="168" y="408">Generator &#183; Groq openai/gpt-oss-120b</text>
       <circle cx="140" cy="460" r="6" fill="#a68cff"/><text x="168" y="468">System prompt &#183; cite [n], no invention</text>
       <circle cx="140" cy="520" r="6" fill="#a68cff"/><text x="168" y="528">Temperature &#183; 0.1</text>
       <circle cx="140" cy="580" r="6" fill="#a68cff"/><text x="168" y="588">top_k &#183; 5 passages / corpus</text>

@@ -22,7 +22,7 @@ PROVIDERS = {
     "groq": {
         "base_url": "https://api.groq.com/openai/v1",
         "key_env": "GROQ_API_KEY",
-        "chat_model": "llama-3.3-70b-versatile",
+        "chat_model": "openai/gpt-oss-120b",
         "has_embeddings": False,
         "pause_s": 2.0,
     },
